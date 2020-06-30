@@ -1,0 +1,10 @@
+multi-sentence :snt1 many :ARG0-of sense :ARG1 urgency :time watch :ARG0 :ARG1 thing :manner-of develop :ARG0 thing :manner quiet :ARG1 :snt2 dragon :domain you :ARG0-of coil :snt3 tiger :domain you :ARG0-of crouch :snt4 admire :ARG0 i :ARG1 patriot :ARG0-of mind :mod noble
+multi-sentence :snt1 give :mode interrogative :ARG0 history :ARG1 lesson :quant many :degree too :ARG2 we :snt2 and :op1 530 :op2 412 :op2 64
+look
+multi-sentence :snt1 suffer :ARG0 person :mod ordinary :snt2 fish :ARG1-of salt :mod still :domain fish :concession even-if :op1 turn :ARG1 body :poss :ARG1-of salt :direction over
+or :op1 call :ARG1 person :ARG2 slave :poss foreign :op2 accuse :ARG1 :ARG2 and :op1 revere :ARG0 :ARG1 thing :mod foreign :op2 fascinate :ARG0 :ARG1 :condition and :op1 express :ARG0 :ARG1 view :ARG0 :ARG1-of differ :degree somewhat :compared-to view :mod tradition :op2 criticize :ARG0 :ARG1-of differ :degree slight :topic free :ARG3 slash :op1 speak :op2 think
+consider :ARG1 person :domain they :ARG0-of betray :ARG1 location_0 :mod more :mod tyrannize :ARG2 culture :ARG1-of cloak :ARG2 and :op1 nationalism :op2 patriotism
+cause :ARG0 achieve :ARG0 location_0 :ARG1 result :ARG2 defeat :ARG0 :ARG1 soldier :ARG0-of have-rel-role :ARG1 :ARG2 enemy :manner fight :polarity - :ARG0 :ARG1 need :ARG0 :ARG1 use :ARG0 :ARG1 force :ARG2 deal :ARG0 :ARG2 location_1 :time no-longer :mod in-fact
+multi-sentence :snt1 intense :mode interrogative :ARG1 article :degree too :snt2 good :mode :ARG1 location_0 :degree so
+multi-sentence :snt1 assume :polarity - :mode imperative :ARG0 you :ARG1 exist :ARG1 thing :condition and :op1 see :polarity :ARG0 eye :part-of :ARG1 :op2 hear :polarity :ARG0 ear :part-of :ARG1 :snt2 create :ARG0 person :quant quantity_0 :ARG1 tiger
+multi-sentence :snt1 and :op1 pass-by :mod just :op2 look :snt2 express :polarity - :ARG0 i :ARG1 thing :ARG1-of opine :ARG0
