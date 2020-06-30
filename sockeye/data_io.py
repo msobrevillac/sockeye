@@ -239,7 +239,7 @@ def get_training_data_iters(source: List[str], target: List[str], source_graphs:
                                             vocab_target[C.UNK_SYMBOL],
                                             vocab_edge['d'],
                                             bucket_batch_sizes=None,
-                                            fill_up=fill_up
+                                            fill_up=fill_up,
                                             temperature= temperature)
 
     logger.info("Creating validation data iterator")
