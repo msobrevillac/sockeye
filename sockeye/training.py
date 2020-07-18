@@ -81,11 +81,13 @@ class TrainingModel(model.SockeyeModel):
                  train_iter: data_io.ParallelBucketSentenceIter,
                  fused: bool,
                  bucketing: bool,
-                 lr_scheduler) -> None:
+                 lr_scheduler,
+                 fixed_param_names: Optional[List[str]] = None) -> None:
         super().__init__(config)
         self.context = context
         self.lr_scheduler = lr_scheduler
         self.bucketing = bucketing
+        self.fixed_param_names = fixed_param_names
         self._build_model_components(fused)
         self.module = self._build_module(train_iter)
         self.training_monitor = None  # type: Optional[callback.TrainingMonitor]
@@ -135,6 +137,7 @@ class TrainingModel(model.SockeyeModel):
             logger.info("Using bucketing. Default max_seq_len=%s", train_iter.default_bucket_key)
             return mx.mod.BucketingModule(sym_gen=sym_gen,
                                           logger=logger,
+                                          fixed_param_names=self.fixed_param_names,
                                           default_bucket_key=train_iter.default_bucket_key,
                                           context=self.context)
         else:
@@ -143,6 +146,7 @@ class TrainingModel(model.SockeyeModel):
             symbol, _, __ = sym_gen(train_iter.buckets[0])
             return mx.mod.Module(symbol=symbol,
                                  data_names=data_names,
+                                 fixed_param_names=self.fixed_param_names,
                                  label_names=label_names,
                                  logger=logger,
                                  context=self.context)
@@ -231,7 +235,7 @@ class TrainingModel(model.SockeyeModel):
         self.module.symbol.save(os.path.join(output_folder, C.SYMBOL_NAME))
 
         self.module.init_params(initializer=initializer, arg_params=self.params, aux_params=None,
-                                allow_missing=False, force_init=False)
+                                allow_missing=True, force_init=False)
         self._log_params()
 
         self.module.init_optimizer(kvstore=kvstore, optimizer=optimizer, optimizer_params=optimizer_params)

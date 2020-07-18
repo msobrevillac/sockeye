@@ -147,8 +147,10 @@ class SockeyeModel:
                                                      "checkpoint has not happened yet." % fname)
 
         self.params, _ = utils.load_params(fname)
+        logger.info("%s", self.params)
         # pack rnn cell weights
         for cell in self.rnn_cells:
+            logger.info("%s", cell)
             self.params = cell.pack_weights(self.params)
         logger.info('Loaded params from "%s"', fname)
 

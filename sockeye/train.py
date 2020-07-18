@@ -654,7 +654,8 @@ def create_training_model(model_config: model.ModelConfig,
                                             train_iter=train_iter,
                                             fused=args.use_fused_rnn,
                                             bucketing=not args.no_bucketing,
-                                            lr_scheduler=lr_scheduler_instance)
+                                            lr_scheduler=lr_scheduler_instance,
+                                            fixed_param_names=args.fixed_param_names)
 
     # We may consider loading the params in TrainingModule, for consistency
     # with the training state saving
